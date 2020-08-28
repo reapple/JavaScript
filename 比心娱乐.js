@@ -1,5 +1,6 @@
 
 
+//https://raw.githubusercontent.com/reapple/JavaScript/master/比心娱乐.js
 
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
