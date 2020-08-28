@@ -6,7 +6,7 @@
 function coverInfo() {
     var name = "比心娱乐";
     var imageURL = "http://cdn.63a0.com/Uploads/Advertisement/20200814_153625_15973905850266_2414.jpg";
-    var online = "30";
+    var online = "40";
     return { "name": name, "logo": imageURL, "source":"JS", "quantity":online };
 }
 
