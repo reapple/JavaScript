@@ -50,6 +50,5 @@ function handleData(dic) {
         };
         formatArr.push(formatDic);
     }
-
     return { "data": formatArr };
 }
