@@ -5,7 +5,7 @@
 function coverInfo() {
     var name = "花姬2";
     var imageURL = "http://cdn.63a0.com/Uploads/Advertisement/20200717_152741_15949708617555_1660.jpg";
-    var online = "30";
+    var online = "100";
     return { "name": name, "logo": imageURL, "source":"JS", "quantity":online };
 }
 
@@ -13,7 +13,7 @@ function coverInfo() {
 function videoListInfo() {
     var url = "https://cdn.63a0.com/index.php/Api/LiveApi/getPlatformlist";
     var method = "POST";
-    var param = { "id": "140" };
+    var param = { "id": "107" };
     var header = {};
     return { "url": url, "method": method, "param": param, "header": header };
 }
