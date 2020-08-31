@@ -11,7 +11,7 @@ var roomType = "0";
 function coverInfo() {
     var name = "花姬配置";
     var imageURL = "http://cdn.63a0.com/Uploads/Advertisement/20200717_152741_15949708617555_1660.jpg";
-    var online = "10";
+    var online = "50";
     return { "name": name, "logo": imageURL, "source": "JS", "quantity": online };
 }
 
