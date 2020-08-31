@@ -22,21 +22,6 @@ function videoListInfo() {
 //处理网络数据，统一格式（key、方法名不可更改）
 function handleData(dic) {
     //dic 为字典，需经过处理，最终如下,key的名称必须如下所示
-    // {
-    //     "data": [
-    //         {
-    //             "name": "TG@iCodess",
-    //             "title": "TG@iCodess",
-    //             "city": "TG@iCodess",
-    //             "headimage": "https://downaoligie.oss-cn-qingdao.aliyuncs.com/65.jpg",
-    //             "cover": "https://downaoligie.oss-cn-qingdao.aliyuncs.com/65.jpg",
-    //             "video": "rtmp://tpull.amghkwy.cn/live/9185723_1598444341?txSecret=cf2a19ff267b69c798f7f8bb0e95d574&txTime=5F45AA75",
-    //             "Popularity": "666666",
-    //             "id": "999999"
-    //         },
-    //         ...
-    // }
-
     var dataArr = dic["data"];
     var formatArr = new Array();
     for (let i = 0; i < dataArr.length; i++) {
