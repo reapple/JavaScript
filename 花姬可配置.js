@@ -1,4 +1,6 @@
 
+
+//https://raw.githubusercontent.com/reapple/JavaScript/master/花姬可配置.js
 //可配置参数
 
 //页数
