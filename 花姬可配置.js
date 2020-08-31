@@ -4,7 +4,7 @@
 //页数
 var pageNum = "1";
 //过滤房间类型：1：仅显示密码或收费房；0：显示所有房间
-var roomType = "1";
+var roomType = "0";
 
 
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
