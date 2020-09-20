@@ -12,7 +12,7 @@ function coverInfo() {
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "https://cdn.63a0.com/index.php/Api/LiveApi/getLivelist";
+    var url = "https://1008610010.yohui.vip/index.php/Api/LiveApi/getLivelist";
     var method = "POST";
     var param = { "id": "25" };
     var header = {};
@@ -34,7 +34,7 @@ function handleData(dic) {
             "name": subDic["title"],
             "Popularity": subDic["watch_number"],
             "video": subDic["address"],
-            "cover": "https://vx3w6yeuqr.oss-cn-shanghai.aliyuncs.com/logo/xnmrm.jpg",
+            "cover": subDic["img"],
             "id": subDic["room_id"]
         };
         formatArr.push(formatDic);
