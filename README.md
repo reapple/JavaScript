@@ -25,14 +25,22 @@ function coverInfo() {
     return { "name": name, "logo": imageURL, "source":"JS", "quantity":online };
 }
 
+//5.10及更高版本支持分页
+//usePage：1代表使用分也、0不使用
+//beginPage：开始的页码
+//pageKey：videoListInfo()函数中页数对应的字段名
+function pageInfo() {
+    return { "usePage": "1", "beginPage": "1", "pageKey": "p" }
+}
+
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
     //房间列表数据url
-    var url = "https://cdn.63a0.com/index.php/Api/LiveApi/getPlatformlist";
+    var url = "https://xxx.xxx.com/index.php/Api/";
     //请求方法：GET或者POST
     var method = "POST";
     //请求参数
-    var param = { "id": "107" };
+    var param = { "p": "1" };
     //请求头参数
     var header = {};
     return { "url": url, "method": method, "param": param, "header": header };
