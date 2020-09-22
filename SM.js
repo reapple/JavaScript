@@ -2,8 +2,8 @@
 
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
-    var name = "小奶猫收费";
-    var imageURL = "https://vx3w6yeuqr.oss-cn-shanghai.aliyuncs.com/logo/xnmrm.jpg";
+    var name = "SM";
+    var imageURL = "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=647738448,313771111&fm=26&gp=0.jpg";
     var online = "10";
     return { "name": name, "logo": imageURL, "source": "JS", "quantity": online };
 }
