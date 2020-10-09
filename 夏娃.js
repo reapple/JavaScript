@@ -1,7 +1,7 @@
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
     var name = "夏娃";
-    var imageURL = "https://downaoligie.oss-cn-qingdao.aliyuncs.com/meigui.jpg";
+    var imageURL = "https://downaoligie.oss-accelerate.aliyuncs.com/tu/xiawa.png";
     var online = "30";
     return { "name": name, "logo": imageURL, "source": "JS", "quantity": online };
 }
