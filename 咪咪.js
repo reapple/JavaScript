@@ -16,9 +16,7 @@ function videoListInfo() {
     var header = {};
     return { "url": url, "method": method, "param": param, "header": header };
 
-
 }
-
 
 
 //处理网络数据，统一格式（key、方法名不可更改）
