@@ -3,7 +3,7 @@
 
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
-    var name = "花姬2";
+    var name = "望月";
     var imageURL = "http://cdn.63a0.com/Uploads/Advertisement/20200717_152741_15949708617555_1660.jpg";
     var online = "100";
     return { "name": name, "logo": imageURL, "source":"JS", "quantity":online };
@@ -11,9 +11,9 @@ function coverInfo() {
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "https://cdn.63a0.com/index.php/Api/LiveApi/getPlatformlist";
+    var url = "https://1008610010.yohui.vip/index.php/Api/LiveApi/getPlatformlist";
     var method = "POST";
-    var param = { "id": "107" };
+    var param = { "id": "10001" };
     var header = {};
     return { "url": url, "method": method, "param": param, "header": header };
 }
