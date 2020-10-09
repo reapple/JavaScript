@@ -34,4 +34,8 @@ function handleData(dic) {
             "video": subDic["address"],
             "cover": subDic["img"],
             "id": subDic["room_id"]
-        
+        };
+        formatArr.push(formatDic);
+    }
+    return { "data": formatArr };
+}
