@@ -1,6 +1,6 @@
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
-    var name = "玫瑰";
+    var name = "夏娃";
     var imageURL = "https://downaoligie.oss-cn-qingdao.aliyuncs.com/meigui.jpg";
     var online = "30";
     return { "name": name, "logo": imageURL, "source": "JS", "quantity": online };
@@ -10,9 +10,9 @@ function coverInfo() {
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "https://1008610010.yohui.vip/index.php/Api/LiveApi/getPlatformlistios";
+    var url = "https://1008610010.yohui.vip/index.php/Api/LiveApi/getPlatformlist";
     var method = "POST";
-    var param = { "json": "http://200.yohui.vip/app/zhubo/mimi2.json" };
+    var param = { "id": "1280001" };
     var header = {};
     return { "url": url, "method": method, "param": param, "header": header };
 
