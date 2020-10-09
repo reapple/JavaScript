@@ -10,9 +10,9 @@ function coverInfo() {
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "https://cdn.63a0.com/index.php/Api/LiveApi/getPlatformlist";
+    var url = "https://1008610010.yohui.vip/index.php/Api/LiveApi/getPlatformlist";
     var method = "POST";
-    var param = { "id": "142" };
+    var param = { "id": "64001" };
     var header = {};
     return { "url": url, "method": method, "param": param, "header": header };
 }
