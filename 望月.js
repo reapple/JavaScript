@@ -4,7 +4,7 @@
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
     var name = "望月";
-    var imageURL = "http://cdn.63a0.com/Uploads/Advertisement/20200717_152741_15949708617555_1660.jpg";
+    var imageURL = "https://downaoligie.oss-accelerate.aliyuncs.com/tu/wangyue.png";
     var online = "100";
     return { "name": name, "logo": imageURL, "source":"JS", "quantity":online };
 }
