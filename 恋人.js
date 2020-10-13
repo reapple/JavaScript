@@ -1,7 +1,7 @@
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
     var name = "恋人";
-    var imageURL = "https://downaoligie.oss-cn-qingdao.aliyuncs.com/lianren.png";
+    var imageURL = "https://downaoligie.oss-accelerate.aliyuncs.com/tu/lianren.png";
     var online = "30";
     return { "name": name, "logo": imageURL, "source": "JS", "quantity": online };
 }
