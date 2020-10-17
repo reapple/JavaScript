@@ -2,7 +2,7 @@
 function coverInfo() {
     var name = "PP直播";
     var imageURL = "https://downaoligie.oss-accelerate.aliyuncs.com/tu/pp.png";
-    var online = "30";
+    var online = "20";
     return { "name": name, "logo": imageURL, "source": "JS", "quantity": online };
 }
 
@@ -12,7 +12,7 @@ function coverInfo() {
 function videoListInfo() {
     var url = "https://1008610010.yohui.vip/index.php/Api/LiveApi/getPlatformlist";
     var method = "POST";
-    var param = { "id": "1320012" };
+    var param = { "id": "7" };
     var header = {};
     return { "url": url, "method": method, "param": param, "header": header };
 
