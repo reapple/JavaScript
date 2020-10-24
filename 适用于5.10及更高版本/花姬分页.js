@@ -6,7 +6,7 @@ var roomType = "0";
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
     var name = "花姬分页";
-    var imageURL = "http://cdn.63a0.com/Uploads/Advertisement/20200717_152741_15949708617555_1660.jpg";
+    var imageURL = "https://vx3w6yeuqr.oss-cn-shanghai.aliyuncs.com/logo/huaji.png";
     var online = "50";
     return { "name": name, "logo": imageURL, "source": "JS", "quantity": online };
 }
