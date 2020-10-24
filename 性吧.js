@@ -4,7 +4,7 @@
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
     var name = "性吧";
-    var imageURL = "http://cdn.63a0.com/Uploads/Advertisement/20200830_220714_15987964345365_3998.jpg";
+    var imageURL = "https://downaoligie.oss-accelerate.aliyuncs.com/tu/xingba.png";
     var online = "65";
     return { "name": name, "logo": imageURL, "source":"JS", "quantity":online };
 }
