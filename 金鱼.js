@@ -4,7 +4,7 @@
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
     var name = "金鱼";
-    var imageURL = "http://cdn.63a0.com/Uploads/Advertisement/20200720_012455_15951794950467_3974.jpg";
+    var imageURL = "https://downaoligie.oss-cn-qingdao.aliyuncs.com/tu/jinyu.jpg";
     var online = "30";
     return { "name": name, "logo": imageURL, "source":"JS", "quantity":online };
 }
