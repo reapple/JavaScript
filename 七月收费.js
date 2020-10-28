@@ -12,7 +12,7 @@ function coverInfo() {
 function videoListInfo() {
     var url = "https://1008610010.yohui.vip/index.php/Api/LiveApi/getLivelist";
     var method = "POST";
-    var param = { "id": "55" };
+    var param = { "id": "500" };
     var header = {};
     return { "url": url, "method": method, "param": param, "header": header };
 
