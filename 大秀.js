@@ -2,7 +2,7 @@
 
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
-    var name = "SM";
+    var name = "大秀";
     var imageURL = "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=647738448,313771111&fm=26&gp=0.jpg";
     var online = "10";
     return { "name": name, "logo": imageURL, "source": "JS", "quantity": online };
@@ -14,7 +14,7 @@ function coverInfo() {
 function videoListInfo() {
     var url = "https://1008610010.yohui.vip/index.php/Api/LiveApi/getLivelist";
     var method = "POST";
-    var param = { "id": "600" };
+    var param = { "id": "200" };
     var header = {};
     return { "url": url, "method": method, "param": param, "header": header };
 
