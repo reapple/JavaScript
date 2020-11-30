@@ -68,7 +68,7 @@ function commitShareCode(cookieName, cookieKey) {
 }
 
 function showMessge() {
-    if (count == 4) {
+    if (count == 5) {
         reApple.msg("京东互助码提交", "", messages)
         reApple.log(messages)
     }
