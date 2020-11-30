@@ -1,7 +1,8 @@
 
 /**
-# 互助码获取
-^http:\/\/api\.turinglabs\.net\/api\/v1\/jd url script-request-header https://raw.githubusercontent.com/reapple/JavaScript/master/jdSharedCode/jd_sharedCode.js
+ 非专业人士制作。
+# 互助码获取链接
+^http:\/\/api\.turinglabs\.net\/api\/v1\/jd url script-request-header https://raw.githubusercontent.com/chavyleung/scripts/master/rrtv/rrtv.cookie.js
  */
 
 //东东工厂
@@ -32,9 +33,11 @@ const cookieKey = 'ddFactory_url'
 const chavy = init()
 const cookieVal = $request.url
 if (cookieVal) {
+    
+
     if (chavy.setdata(cookieVal, cookieKey)) {
-        chavy.msg(`${cookieName}`, '获取Cookie: 成功', '')
-        chavy.log(`[${cookieName}] 获取Cookie: 成功, cookie: ${cookieVal}`)
+        chavy.msg(`${cookieName}`, '获取东东工厂链接: 成功', '')
+        chavy.log(`[${cookieName}] 获取东东工厂链接: 成功, cookie: ${cookieVal}`)
     }
 }
 function init() {
