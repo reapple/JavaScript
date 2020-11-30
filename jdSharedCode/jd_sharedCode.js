@@ -55,9 +55,11 @@ function commitShareCode(cookieName, cookieKey) {
                 reApple.log(cookieName + '互助码提交成功✅' + '\n')
             }
             count++
+            reApple.log(count)
             showMessge()
         }, reason => {
             count++
+            reApple.log(count)
             reApple.log(cookieName + ":" + reason.error + '\n')
             showMessge()
         });
