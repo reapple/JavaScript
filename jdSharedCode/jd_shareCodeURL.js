@@ -12,7 +12,7 @@ const cookieName_pet = '京东萌宠'
 const cookieKey_pet = 'pet_url'
 
 const cookieName_farm = '京东农场'
-const cookieKey_farm = 'pet_farm'
+const cookieKey_farm = 'farm_url'
 
 const reApple = init()
 
@@ -44,7 +44,7 @@ if (cookieVal) {
         }
     }
     else if (cookieVal.indexOf("farm") != -1) {
-        if (reApple.setdata(cookieVal, cookieKey_pet)) {
+        if (reApple.setdata(cookieVal, cookieKey_farm)) {
             reApple.msg(`${cookieName_farm}`, '获取京东农场互助码链接: 成功', cookieVal)
             reApple.log(`[${cookieName_farm}] 获取京东农场互助码链接: 成功, cookie: ${cookieVal}`)
         }
