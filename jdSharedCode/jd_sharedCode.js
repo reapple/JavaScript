@@ -55,6 +55,7 @@ function commitShareCode(cookieName, cookieKey) {
                     messages = messages + cookieName + '互助码提交成功✅' + '\n'
                 }
                 count++
+                reApple.log(messages)
                 showMessge()
             })
             resolve()
@@ -63,6 +64,7 @@ function commitShareCode(cookieName, cookieKey) {
     } else {
         messages = messages + '未提供' + cookieName + '的链接⚠️' + '\n'
         count++
+        reApple.log(messages)
         showMessge()
     }
 }
@@ -70,7 +72,6 @@ function commitShareCode(cookieName, cookieKey) {
 function showMessge() {
     if (count == 5) {
         reApple.msg("京东互助码提交", "", messages)
-        reApple.log(messages)
     }
 }
 
