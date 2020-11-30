@@ -1,5 +1,4 @@
 
-
 /*
 
 [task_local] 
@@ -41,20 +40,20 @@ function commitShareCode(cookieName, cookieKey) {
     let url = reApple.getdata(cookieKey)
     if (url && url.length) {
         return new Promise((resolve, reject) => {
-            reApple.post(url, (error, response, data) => {
+            reApple.get(url, (error, response, data) => {
                 let reDic = JSON.parse(data)
                 if (reDic.message == "This ddfactory share code existed") {
-                    messages = messages + name + '互助码已提交过⚠️' + '\n'
+                    messages = messages + cookieName + '互助码已提交过⚠️' + '\n'
                 } else if (reDic.message == "code error") {
-                    messages = messages + name + '互助码错误❎' + '\n'
+                    messages = messages + cookieName + '互助码错误❎' + '\n'
                 } else if (reDic.message == "success") {
-                    messages = messages + name + '互助码提交成功✅' + '\n'
+                    messages = messages + cookieName + '互助码提交成功✅' + '\n'
                 }
             })
             resolve()
         })
     } else {
-        messages = messages + '未提供' + name + '的链接⚠️' + '\n'
+        messages = messages + '未提供' + cookieName + '的链接⚠️' + '\n'
     }
 }
 
