@@ -25,26 +25,24 @@ const cookieName_pet = '京东萌宠'
 const cookieKey_pet = 'pet_url'
 
 var messages = ""
+var count = 0
     ; (exec = async () => {
         reApple.log("🔔开始提交京东互助码")
         await commitShareCode(cookieName_factory, cookieKey_factory)
         await commitShareCode(cookieName_jx, cookieKey_jx)
         await commitShareCode(cookieName_bean, cookieKey_bean)
         await commitShareCode(cookieName_pet, cookieKey_pet)
-        showMessge()
     })()
         .catch((e) => reApple.log(`❌ 失败: ${e}`))
         .finally(() => reApple.done())
 
 function commitShareCode(cookieName, cookieKey) {
     let urlStr = reApple.getdata(cookieKey)
-    let url = { "url":  urlStr}
+    let url = { "url": urlStr }
     if (urlStr && urlStr.length) {
         return new Promise((resolve, reject) => {
             reApple.get(url, (error, response, data) => {
-                let reDic = JSON.parse(data)
-                reApple.log(reDic)
-                reApple.log(reDic.message)
+                let reDic = JSON.parse(response.body)
                 if (reDic.message == "This ddfactory share code existed") {
                     messages = messages + cookieName + '互助码已提交过⚠️' + '\n'
                 } else if (reDic.message == "code error") {
@@ -52,17 +50,24 @@ function commitShareCode(cookieName, cookieKey) {
                 } else if (reDic.message == "success") {
                     messages = messages + cookieName + '互助码提交成功✅' + '\n'
                 }
+                count++
             })
             resolve()
         })
+        showMessge()
     } else {
         messages = messages + '未提供' + cookieName + '的链接⚠️' + '\n'
+        count++
+        showMessge()
     }
 }
 
 function showMessge() {
-    reApple.msg("京东互助码提交", "", messages)
-    reApple.log(messages)
+    if (count == 3) {
+        reApple.msg("京东互助码提交", "", messages)
+        reApple.log(messages)
+    }
+
 }
 
 function init() {
