@@ -44,6 +44,7 @@ function commitShareCode(cookieName, cookieKey) {
         var myRequest = { url: urlStr, method: "GET" }
         $task.fetch(myRequest).then(response => {
             var reDic = JSON.parse(response.body)
+            reApple.log(reDic)
             if (reDic.message == "This ddfactory share code existed") {
                 messages +=  (cookieName + "互助码已提交过🐶" + '\n')
                 reApple.log(cookieName + '互助码已提交过🐶' + '\n')
