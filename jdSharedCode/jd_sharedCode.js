@@ -1,11 +1,14 @@
 
-/**
+
+/*
+
 [task_local] 
 15 2 1,10,20 * * https://raw.githubusercontent.com/reapple/JavaScript/master/jdSharedCode/jd_sharedCode.js, tag=提交互助码, enabled=true
 
 [rewrite_local]
 # 互助码获取链接
 ^http:\/\/api\.turinglabs\.net\/api\/v1\/jd url script-request-header https://raw.githubusercontent.com/reapple/JavaScript/master/jdSharedCode/jd_shareCodeURL.js
+ 
  */
 
 
