@@ -11,6 +11,9 @@ const cookieKey_bean = 'bean_url'
 const cookieName_pet = '京东萌宠'
 const cookieKey_pet = 'pet_url'
 
+const cookieName_farm = '京东农场'
+const cookieKey_farm = 'pet_farm'
+
 const reApple = init()
 
 //获取链接
@@ -24,20 +27,26 @@ if (cookieVal) {
     }
     else if (cookieVal.indexOf("jxfactory") != -1) {
         if (reApple.setdata(cookieVal, cookieKey_jx)) {
-            reApple.msg(`${cookieName_jx}`, '获取东东工厂互助码链接: 成功', cookieVal)
-            reApple.log(`[${cookieName_jx}] 获取东东工厂互助码链接: 成功, cookie: ${cookieVal}`)
+            reApple.msg(`${cookieName_jx}`, '获取京喜工厂互助码链接: 成功', cookieVal)
+            reApple.log(`[${cookieName_jx}] 获取京喜工厂互助码链接: 成功, cookie: ${cookieVal}`)
         }
     }
     else if (cookieVal.indexOf("bean") != -1) {
         if (reApple.setdata(cookieVal, cookieKey_bean)) {
-            reApple.msg(`${cookieName_bean}`, '获取东东工厂互助码链接: 成功', cookieVal)
-            reApple.log(`[${cookieName_bean}] 获取东东工厂互助码链接: 成功, cookie: ${cookieVal}`)
+            reApple.msg(`${cookieName_bean}`, '获取种豆得豆互助码链接: 成功', cookieVal)
+            reApple.log(`[${cookieName_bean}] 获取种豆得豆互助码链接: 成功, cookie: ${cookieVal}`)
         }
     }
     else if (cookieVal.indexOf("pet") != -1) {
         if (reApple.setdata(cookieVal, cookieKey_pet)) {
-            reApple.msg(`${cookieName_pet}`, '获取东东工厂互助码链接: 成功', cookieVal)
-            reApple.log(`[${cookieName_pet}] 获取东东工厂互助码链接: 成功, cookie: ${cookieVal}`)
+            reApple.msg(`${cookieName_pet}`, '获取京东萌宠互助码链接: 成功', cookieVal)
+            reApple.log(`[${cookieName_pet}] 获取京东萌宠互助码链接: 成功, cookie: ${cookieVal}`)
+        }
+    }
+    else if (cookieVal.indexOf("farm") != -1) {
+        if (reApple.setdata(cookieVal, cookieKey_pet)) {
+            reApple.msg(`${cookieName_farm}`, '获取京东农场互助码链接: 成功', cookieVal)
+            reApple.log(`[${cookieName_farm}] 获取京东农场互助码链接: 成功, cookie: ${cookieVal}`)
         }
     }
 
