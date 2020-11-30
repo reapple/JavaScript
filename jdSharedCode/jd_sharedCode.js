@@ -39,10 +39,11 @@ commitShareCode(cookieName_farm, cookieKey_farm)
 
 function commitShareCode(cookieName, cookieKey) {
     let urlStr = reApple.getdata(cookieKey)
-    let url = { "url": urlStr }
+
     if (urlStr && urlStr.length) {
-        reApple.get(url, (error, response, data) => {
-            let reDic = JSON.parse(data)
+        let myRequest = { url: urlStr, method: "GET" }
+        $task.fetch(myRequest).then(response => {
+            let reDic = JSON.parse(response.body)
             if (reDic.message == "This ddfactory share code existed") {
                 messages = messages + cookieName + '互助码已提交过🐶' + '\n'
                 reApple.log(cookieName + '互助码已提交过🐶' + '\n')
@@ -55,7 +56,11 @@ function commitShareCode(cookieName, cookieKey) {
             }
             count++
             showMessge()
-        })
+        }, reason => {
+            count++
+            reApple.log(cookieName + ":" + reason.error + '\n')
+            showMessge()
+        });
     } else {
         messages = messages + '未提供' + cookieName + '的链接⚠️' + '\n'
         count++
