@@ -1,45 +1,89 @@
 
 /**
- 非专业人士制作。
+[task_local] 
+11 2 1,10,20 * * https://raw.githubusercontent.com/reapple/JavaScript/master/jdSharedCode/jd_sharedCode.js, tag=提交互助码, enabled=true
+
+[rewrite_local]
 # 互助码获取链接
 ^http:\/\/api\.turinglabs\.net\/api\/v1\/jd url script-request-header https://raw.githubusercontent.com/reapple/JavaScript/master/jdSharedCode/jd_sharedCode.js
  */
 
-//东东工厂
-const url = "";
-const method = "GET";
-const headers = {};
-const data = {};
 
-const myRequest = {
-    url: url,
-    method: method, // Optional, default GET.
-    headers: headers, // Optional.
-    body: JSON.stringify(data) // Optional.
-};
+const reApple = init()
+const cookieName_factory = '东东工厂'
+const cookieKey_factory = 'ddFactory_url'
 
-$task.fetch(myRequest).then(response => {
-    // response.statusCode, response.headers, response.body
-    console.log(response.body);
-    $notify("提交东东工厂互助码", "成功🎉", JSON.parse(response.body).message); // Success!
-}, reason => {
-    // reason.error
-    $notify("提交东东工厂互助码", "失败⚠️", reason.error); // Error!
-});
+const cookieName_jx = '京喜工厂'
+const cookieKey_jx = 'jxFactory_url'
+
+const cookieName_bean = '种豆得豆'
+const cookieKey_bean = 'bean_url'
+
+const cookieName_pet = '京东萌宠'
+const cookieKey_pet = 'pet_url'
+
+var messages = ""
+reApple.log("🔔开始提交京东互助码")
+await commitShareCode(cookieName_factory, cookieKey_factory)
+await commitShareCode(cookieName_jx, cookieKey_jx)
+await commitShareCode(cookieName_bean, cookieKey_bean)
+await commitShareCode(cookieName_pet, cookieKey_pet)
+showMessge()
+
+function commitShareCode(cookieName, cookieKey) {
+    let url = reApple.getdata(cookieKey)
+    if (url && url.length) {
+        return new Promise((resolve, reject) => {
+            reApple.post(url, (error, response, data) => {
+                let reDic = JSON.parse(data)
+                if (reDic.message == "This ddfactory share code existed") {
+                    messages = messages + name + '互助码已提交过⚠️' + '\n'
+                } else if (reDic.message == "code error") {
+                    messages = messages + name + '互助码错误❎' + '\n'
+                } else if (reDic.message == "success") {
+                    messages = messages + name + '互助码提交成功✅' + '\n'
+                }
+            })
+            resolve()
+        })
+    } else {
+        messages = messages +'未提供'+ name + '的链接⚠️' + '\n'
+    }
+}
+
+function showMessge() {
+    reApple.msg("京东互助码提交", "", messages)
+    reApple.log(messages)
+}
 
 
-const cookieName = '东东工厂'
-const cookieKey = 'ddFactory_url'
-const chavy = init()
+//获取链接
 const cookieVal = $request.url
 if (cookieVal) {
     if (cookieVal.indexOf("ddfactory") != -1) {
-        if (chavy.setdata(cookieVal, cookieKey)) {
-            chavy.msg(`${cookieName}`, '获取东东工厂链接: 成功', cookieVal)
-            chavy.log(`[${cookieName}] 获取东东工厂链接: 成功, cookie: ${cookieVal}`)
+        if (reApple.setdata(cookieVal, cookieKey_factory)) {
+            reApple.msg(`${cookieName_factory}`, '获取东东工厂互助码链接: 成功', cookieVal)
+            reApple.log(`[${cookieName_factory}] 获取东东工厂互助码链接: 成功, cookie: ${cookieVal}`)
         }
     }
-
+    else if (cookieVal.indexOf("jxfactory") != -1) {
+        if (reApple.setdata(cookieVal, cookieKey_jx)) {
+            reApple.msg(`${cookieName_jx}`, '获取东东工厂互助码链接: 成功', cookieVal)
+            reApple.log(`[${cookieName_jx}] 获取东东工厂互助码链接: 成功, cookie: ${cookieVal}`)
+        }
+    }
+    else if (cookieVal.indexOf("bean") != -1) {
+        if (reApple.setdata(cookieVal, cookieKey_bean)) {
+            reApple.msg(`${cookieName_bean}`, '获取东东工厂互助码链接: 成功', cookieVal)
+            reApple.log(`[${cookieName_bean}] 获取东东工厂互助码链接: 成功, cookie: ${cookieVal}`)
+        }
+    }
+    else if (cookieVal.indexOf("pet") != -1) {
+        if (reApple.setdata(cookieVal, cookieKey_pet)) {
+            reApple.msg(`${cookieName_pet}`, '获取东东工厂互助码链接: 成功', cookieVal)
+            reApple.log(`[${cookieName_pet}] 获取东东工厂互助码链接: 成功, cookie: ${cookieVal}`)
+        }
+    }
 
 }
 function init() {
@@ -80,9 +124,19 @@ function init() {
             $task.fetch(url).then((resp) => cb(null, {}, resp.body))
         }
     }
+    valFor = (dic) => {
+        for (var item in dic) {
+            return dic[item]
+        }
+    }
+    keyFor = (dic) => {
+        for (var item in dic) {
+            return item
+        }
+    }
     done = (value = {}) => {
         $done(value)
     }
-    return { isSurge, isQuanX, msg, log, getdata, setdata, get, post, done }
+    return { isSurge, isQuanX, msg, log, getdata, setdata, get, post, done, valFor, keyFor }
 }
-chavy.done()
+reApple.done()
