@@ -6,7 +6,7 @@
  */
 
 //东东工厂
-const url = "http://api.turinglabs.net/api/v1/jd/ddfactory/create/P04z54XCjVWnYaS5m9cZ2Ss2n4blX0nWAV3UFQ/";
+const url = "";
 const method = "GET";
 const headers = {};
 const data = {};
