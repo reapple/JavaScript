@@ -26,7 +26,7 @@ const cookieKey_pet = 'pet_url'
 
 const cookieName_farm = '京东农场'
 const cookieKey_farm = 'farm_url'
-const messageDic = { "message": "" }
+const messageDic = {}
 
 reApple.log("🔔开始提交京东互助码")
 commitShareCode(cookieName_factory, cookieKey_factory)
@@ -35,24 +35,22 @@ commitShareCode(cookieName_bean, cookieKey_bean)
 commitShareCode(cookieName_pet, cookieKey_pet)
 commitShareCode(cookieName_farm, cookieKey_farm)
 
+
 var count = 0
 function commitShareCode(cookieName, cookieKey) {
     var urlStr = reApple.getdata(cookieKey)
-    var messages = messageDic["message"]
     if (urlStr && urlStr.length) {
         var myRequest = { url: urlStr, method: "GET" }
         $task.fetch(myRequest).then(response => {
             var reDic = JSON.parse(response.body)
-            reApple.log(reDic)
             if (reDic.message == "This ddfactory share code existed") {
-                messageDic["message"] += (messages + cookieName + "互助码已提交过🐶" + '\n')
-
+                messageDic[cookieName] = (cookieName + "互助码已提交过🐶" + '\n')
                 reApple.log(cookieName + '互助码已提交过🐶' + '\n')
             } else if (reDic.message == "code error") {
-                messageDic["message"] += (messages + cookieName + '互助码错误❎' + '\n')
+                messageDic[cookieName] = (cookieName + '互助码错误❎' + '\n')
                 reApple.log(cookieName + '互助码错误❎' + '\n')
             } else if (reDic.message == "success") {
-                messageDic["message"] += (messages + cookieName + '互助码提交成功✅' + '\n')
+                messageDic[cookieName] = (cookieName + '互助码提交成功✅' + '\n')
                 reApple.log(cookieName + '互助码提交成功✅' + '\n')
             }
             count++
@@ -61,11 +59,12 @@ function commitShareCode(cookieName, cookieKey) {
         }, reason => {
             count++
             reApple.log(count)
+            messageDic[cookieName] = (cookieName + ":" + reason.error + '\n')
             reApple.log(cookieName + ":" + reason.error + '\n')
             showMessge()
         });
     } else {
-        messages = messages + '未提供' + cookieName + '的链接⚠️' + '\n'
+        messageDic[cookieName] = '未提供' + cookieName + '的链接⚠️' + '\n'
         count++
         showMessge()
     }
@@ -73,8 +72,7 @@ function commitShareCode(cookieName, cookieKey) {
 
 function showMessge() {
     if (count == 5) {
-        reApple.msg("京东互助码提交", "", messageDic["message"])
-        reApple.log(messages)
+        reApple.msg("京东互助码提交", "", messageDic[cookieName_factory] + messageDic[cookieName_jx] + messageDic[cookieName_bean] + messageDic[cookieName_pet] + messageDic[cookieName_farm])
     }
 }
 
