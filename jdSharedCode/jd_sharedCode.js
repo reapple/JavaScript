@@ -25,7 +25,7 @@ const cookieName_pet = '京东萌宠'
 const cookieKey_pet = 'pet_url'
 
 const cookieName_farm = '京东农场'
-const cookieKey_farm = 'pet_farm'
+const cookieKey_farm = 'farm_url'
 
 var messages = ""
 var count = 0
