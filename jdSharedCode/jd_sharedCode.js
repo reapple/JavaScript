@@ -29,40 +29,33 @@ const cookieKey_farm = 'farm_url'
 
 var messages = ""
 var count = 0
-    ; (exec = async () => {
-        reApple.log("🔔开始提交京东互助码")
-        await commitShareCode(cookieName_factory, cookieKey_factory)
-        await commitShareCode(cookieName_jx, cookieKey_jx)
-        await commitShareCode(cookieName_bean, cookieKey_bean)
-        await commitShareCode(cookieName_pet, cookieKey_pet)
-        await commitShareCode(cookieName_farm, cookieKey_farm)
-    })()
-        .catch((e) => reApple.log(`❌ 失败: ${e}`))
-        .finally(() => reApple.done())
+reApple.log("🔔开始提交京东互助码")
+commitShareCode(cookieName_factory, cookieKey_factory)
+commitShareCode(cookieName_jx, cookieKey_jx)
+commitShareCode(cookieName_bean, cookieKey_bean)
+commitShareCode(cookieName_pet, cookieKey_pet)
+commitShareCode(cookieName_farm, cookieKey_farm)
+
 
 function commitShareCode(cookieName, cookieKey) {
     let urlStr = reApple.getdata(cookieKey)
     let url = { "url": urlStr }
     if (urlStr && urlStr.length) {
-        return new Promise((resolve, reject) => {
-            reApple.get(url, (error, response, data) => {
-                let reDic = JSON.parse(data)
-                if (reDic.message == "This ddfactory share code existed") {
-                    messages = messages + cookieName + '互助码已提交过🐶' + '\n'
-                    reApple.log(cookieName + '互助码已提交过🐶' + '\n')
-                } else if (reDic.message == "code error") {
-                    messages = messages + cookieName + '互助码错误❎' + '\n'
-                    reApple.log(cookieName + '互助码错误❎' + '\n')
-                } else if (reDic.message == "success") {
-                    messages = messages + cookieName + '互助码提交成功✅' + '\n'
-                    reApple.log(cookieName + '互助码提交成功✅' + '\n')
-                }
-                count++
-                showMessge()
-            })
-            resolve()
+        reApple.get(url, (error, response, data) => {
+            let reDic = JSON.parse(data)
+            if (reDic.message == "This ddfactory share code existed") {
+                messages = messages + cookieName + '互助码已提交过🐶' + '\n'
+                reApple.log(cookieName + '互助码已提交过🐶' + '\n')
+            } else if (reDic.message == "code error") {
+                messages = messages + cookieName + '互助码错误❎' + '\n'
+                reApple.log(cookieName + '互助码错误❎' + '\n')
+            } else if (reDic.message == "success") {
+                messages = messages + cookieName + '互助码提交成功✅' + '\n'
+                reApple.log(cookieName + '互助码提交成功✅' + '\n')
+            }
+            count++
+            showMessge()
         })
-        
     } else {
         messages = messages + '未提供' + cookieName + '的链接⚠️' + '\n'
         count++
@@ -130,4 +123,3 @@ function init() {
     }
     return { isSurge, isQuanX, msg, log, getdata, setdata, get, post, done, valFor, keyFor }
 }
-reApple.done()
