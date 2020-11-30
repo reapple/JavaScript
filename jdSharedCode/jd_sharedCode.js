@@ -43,6 +43,8 @@ function commitShareCode(cookieName, cookieKey) {
         return new Promise((resolve, reject) => {
             reApple.get(url, (error, response, data) => {
                 let reDic = JSON.parse(data)
+                reApple.log(reDic)
+                reApple.log(reDic.message)
                 if (reDic.message == "This ddfactory share code existed") {
                     messages = messages + cookieName + '互助码已提交过⚠️' + '\n'
                 } else if (reDic.message == "code error") {
