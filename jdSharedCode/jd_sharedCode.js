@@ -24,6 +24,9 @@ const cookieKey_bean = 'bean_url'
 const cookieName_pet = '京东萌宠'
 const cookieKey_pet = 'pet_url'
 
+const cookieName_farm = '京东农场'
+const cookieKey_farm = 'pet_farm'
+
 var messages = ""
 var count = 0
     ; (exec = async () => {
@@ -32,6 +35,7 @@ var count = 0
         await commitShareCode(cookieName_jx, cookieKey_jx)
         await commitShareCode(cookieName_bean, cookieKey_bean)
         await commitShareCode(cookieName_pet, cookieKey_pet)
+        await commitShareCode(cookieName_farm, cookieKey_farm)
     })()
         .catch((e) => reApple.log(`❌ 失败: ${e}`))
         .finally(() => reApple.done())
