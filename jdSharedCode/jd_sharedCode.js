@@ -35,7 +35,6 @@ commitShareCode(cookieName_bean, cookieKey_bean)
 commitShareCode(cookieName_pet, cookieKey_pet)
 commitShareCode(cookieName_farm, cookieKey_farm)
 
-
 var count = 0
 function commitShareCode(cookieName, cookieKey) {
     var urlStr = reApple.getdata(cookieKey)
