@@ -33,12 +33,14 @@ const cookieKey = 'ddFactory_url'
 const chavy = init()
 const cookieVal = $request.url
 if (cookieVal) {
-    
-
-    if (chavy.setdata(cookieVal, cookieKey)) {
-        chavy.msg(`${cookieName}`, '获取东东工厂链接: 成功', cookieVal)
-        chavy.log(`[${cookieName}] 获取东东工厂链接: 成功, cookie: ${cookieVal}`)
+    if (cookieVal.indexOf("ddfactory") != -1) {
+        if (chavy.setdata(cookieVal, cookieKey)) {
+            chavy.msg(`${cookieName}`, '获取东东工厂链接: 成功', cookieVal)
+            chavy.log(`[${cookieName}] 获取东东工厂链接: 成功, cookie: ${cookieVal}`)
+        }
     }
+
+
 }
 function init() {
     isSurge = () => {
