@@ -1,8 +1,7 @@
 
 /**
- 非专业人士制作。
-# 互助码获取链接
-^http:\/\/api\.turinglabs\.net\/api\/v1\/jd url script-request-header https://raw.githubusercontent.com/chavyleung/scripts/master/rrtv/rrtv.cookie.js
+# 互助码获取
+^http:\/\/api\.turinglabs\.net\/api\/v1\/jd url script-request-header https://raw.githubusercontent.com/reapple/JavaScript/master/jdSharedCode/jd_sharedCode.js
  */
 
 //东东工厂
