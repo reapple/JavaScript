@@ -27,7 +27,7 @@ const cookieKey_pet = 'pet_url'
 const cookieName_farm = '京东农场'
 const cookieKey_farm = 'farm_url'
 
-var messages = ""
+const messages = ""
 var count = 0
     ; (exec = async () => {
         reApple.log("🔔开始提交京东互助码")
