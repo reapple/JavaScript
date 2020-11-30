@@ -27,8 +27,7 @@ const cookieKey_pet = 'pet_url'
 const cookieName_farm = '京东农场'
 const cookieKey_farm = 'farm_url'
 
-var messages = ""
-var count = 0
+
 reApple.log("🔔开始提交京东互助码")
 commitShareCode(cookieName_factory, cookieKey_factory)
 commitShareCode(cookieName_jx, cookieKey_jx)
@@ -36,22 +35,23 @@ commitShareCode(cookieName_bean, cookieKey_bean)
 commitShareCode(cookieName_pet, cookieKey_pet)
 commitShareCode(cookieName_farm, cookieKey_farm)
 
-
+var messages = ''
+var count = 0
 function commitShareCode(cookieName, cookieKey) {
-    let urlStr = reApple.getdata(cookieKey)
+    var urlStr = reApple.getdata(cookieKey)
 
     if (urlStr && urlStr.length) {
-        let myRequest = { url: urlStr, method: "GET" }
+        var myRequest = { url: urlStr, method: "GET" }
         $task.fetch(myRequest).then(response => {
-            let reDic = JSON.parse(response.body)
+            var reDic = JSON.parse(response.body)
             if (reDic.message == "This ddfactory share code existed") {
-                messages = messages + cookieName + '互助码已提交过🐶' + '\n'
+                messages +=  (cookieName + "互助码已提交过🐶" + '\n')
                 reApple.log(cookieName + '互助码已提交过🐶' + '\n')
             } else if (reDic.message == "code error") {
-                messages = messages + cookieName + '互助码错误❎' + '\n'
+                messages += (cookieName + '互助码错误❎' + '\n')
                 reApple.log(cookieName + '互助码错误❎' + '\n')
             } else if (reDic.message == "success") {
-                messages = messages + cookieName + '互助码提交成功✅' + '\n'
+                messages += (cookieName + '互助码提交成功✅' + '\n')
                 reApple.log(cookieName + '互助码提交成功✅' + '\n')
             }
             count++
