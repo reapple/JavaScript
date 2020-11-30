@@ -37,8 +37,7 @@ var messages = ""
         .finally(() => reApple.done())
 
 function commitShareCode(cookieName, cookieKey) {
-    let url = reApple.getdata(cookieKey)
-    reApple.log(url)
+    let url = { "url": reApple.getdata(cookieKey) }
     if (url && url.length) {
         return new Promise((resolve, reject) => {
             reApple.get(url, (error, response, data) => {
