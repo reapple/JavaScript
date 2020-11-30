@@ -26,7 +26,7 @@ const cookieKey_pet = 'pet_url'
 
 const cookieName_farm = '京东农场'
 const cookieKey_farm = 'farm_url'
-
+const messageDic = { "message": "" }
 
 reApple.log("🔔开始提交京东互助码")
 commitShareCode(cookieName_factory, cookieKey_factory)
@@ -35,7 +35,7 @@ commitShareCode(cookieName_bean, cookieKey_bean)
 commitShareCode(cookieName_pet, cookieKey_pet)
 commitShareCode(cookieName_farm, cookieKey_farm)
 
-var messageDic = { "message": "" }
+
 var count = 0
 function commitShareCode(cookieName, cookieKey) {
     var urlStr = reApple.getdata(cookieKey)
