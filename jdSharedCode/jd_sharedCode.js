@@ -1,7 +1,7 @@
 
 /**
 [task_local] 
-11 2 1,10,20 * * https://raw.githubusercontent.com/reapple/JavaScript/master/jdSharedCode/jd_sharedCode.js, tag=提交互助码, enabled=true
+15 2 1,10,20 * * https://raw.githubusercontent.com/reapple/JavaScript/master/jdSharedCode/jd_sharedCode.js, tag=提交互助码, enabled=true
 
 [rewrite_local]
 # 互助码获取链接
@@ -23,12 +23,16 @@ const cookieName_pet = '京东萌宠'
 const cookieKey_pet = 'pet_url'
 
 var messages = ""
-reApple.log("🔔开始提交京东互助码")
-await commitShareCode(cookieName_factory, cookieKey_factory)
-await commitShareCode(cookieName_jx, cookieKey_jx)
-await commitShareCode(cookieName_bean, cookieKey_bean)
-await commitShareCode(cookieName_pet, cookieKey_pet)
-showMessge()
+    ; (exec = async () => {
+        reApple.log("🔔开始提交京东互助码")
+        await commitShareCode(cookieName_factory, cookieKey_factory)
+        await commitShareCode(cookieName_jx, cookieKey_jx)
+        await commitShareCode(cookieName_bean, cookieKey_bean)
+        await commitShareCode(cookieName_pet, cookieKey_pet)
+        showMessge()
+    })()
+        .catch((e) => chavy.log(`❌ 失败: ${e}`))
+        .finally(() => chavy.done())
 
 function commitShareCode(cookieName, cookieKey) {
     let url = reApple.getdata(cookieKey)
@@ -47,7 +51,7 @@ function commitShareCode(cookieName, cookieKey) {
             resolve()
         })
     } else {
-        messages = messages +'未提供'+ name + '的链接⚠️' + '\n'
+        messages = messages + '未提供' + name + '的链接⚠️' + '\n'
     }
 }
 
