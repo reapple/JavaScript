@@ -1,8 +1,8 @@
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
-    var name = "PP直播";
-    var imageURL = "https://downaoligie.oss-accelerate.aliyuncs.com/tu/pp.png";
-    var online = "20";
+    var name = "77直播";
+    var imageURL = "https://8889999.oss-accelerate.aliyuncs.com/77.png";
+    var online = "30";
     return { "name": name, "logo": imageURL, "source": "JS", "quantity": online };
 }
 
@@ -12,7 +12,7 @@ function coverInfo() {
 function videoListInfo() {
     var url = "https://1008610010.yohui.vip/index.php/Api/LiveApi/getPlatformlist";
     var method = "POST";
-    var param = { "id": "6" };
+    var param = { "id": "5" };
     var header = {};
     return { "url": url, "method": method, "param": param, "header": header };
 
