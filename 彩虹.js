@@ -1,7 +1,7 @@
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
     var name = "彩虹";
-    var imageURL = "https://downaoligie.oss-cn-qingdao.aliyuncs.com/caihong.png";
+    var imageURL = "https://8889999.oss-accelerate.aliyuncs.com/caihong.png";
     var online = "30";
     return { "name": name, "logo": imageURL, "source": "JS", "quantity": online };
 }
