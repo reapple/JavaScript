@@ -3,7 +3,7 @@
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
     var name = "七月";
-    var imageURL = "https://downaoligie.oss-accelerate.aliyuncs.com/tu/qiyue.png";
+    var imageURL = "https://8889999.oss-accelerate.aliyuncs.com/qiyue.png";
     var online = "110";
     return { "name": name, "logo": imageURL, "source":"JS", "quantity":online };
 }
