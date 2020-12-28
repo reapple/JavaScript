@@ -9,7 +9,7 @@ function coverInfo() {
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "http://hhhhapi.111eee.net/csvip_cs.php?name=xnmsf";
+    var url = "http://api.479sa.net/api/omg/channel/xiaonaimaoshoufei.txt";
     var method = "POST";
     var param = {};
     var header = {};
