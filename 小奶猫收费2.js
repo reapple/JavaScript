@@ -26,7 +26,7 @@ function handleData(dic) {
     for (let i = 0; i < dataArr.length; i++) {
         let subDic = dataArr[i];
         var formatDic = {
-            "name": subDic["name"],
+            "name": subDic["name"].replace("微群-","");,
             "Popularity": "未知",
             "video": subDic["video"],
             "cover": subDic["cover"],
