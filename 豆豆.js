@@ -1,7 +1,7 @@
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
-    var name = "蝶恋花";
-    var imageURL = "https://8889999.oss-accelerate.aliyuncs.com/dielian.png";
+    var name = "豆豆";
+    var imageURL = "https://8889999.oss-accelerate.aliyuncs.com/doudou.png";
     var online = "30";
     return { "name": name, "logo": imageURL, "source": "JS", "quantity": online };
 }
@@ -12,7 +12,7 @@ function coverInfo() {
 function videoListInfo() {
     var url = "https://1008610010.yohui.vip/index.php/Api/LiveApi/getPlatformlist";
     var method = "POST";
-    var param = { "id": "8" };
+    var param = { "id": "6" };
     var header = {};
     return { "url": url, "method": method, "param": param, "header": header };
 
