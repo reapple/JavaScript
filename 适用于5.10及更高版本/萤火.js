@@ -16,7 +16,7 @@ function pageInfo() {
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "http://s3301w.zhishilvxing.com/api/public/?service=Home.getHot";
+    var url = "http://s40301.jslhw88.com/api/public/?service=Home.getHot";
     var method = "POST";
     var param = { "p": "1" };
     var header = {};
