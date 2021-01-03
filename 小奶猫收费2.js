@@ -9,7 +9,7 @@ function coverInfo() {
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "http://xdjapi.479sa.net/api/omg/channel/xiaonaimaoshoufei.txt";
+    var url = "http://xdjapi210103.479sa.net/api/omg/channel/xiaonaimaoshoufei.txt";
     var method = "POST";
     var param = {};
     var header = {};
