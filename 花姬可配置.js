@@ -19,7 +19,7 @@ function coverInfo() {
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "http://s.huaji-b.com:57769/api/public/?service=Home.getHot";
+    var url = "http://s40000.0yk75p.com/api/public/?service=Home.getHot";
     var method = "POST";
     var param = { "p": pageNum };
     var header = {};
