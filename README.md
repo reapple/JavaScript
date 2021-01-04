@@ -35,7 +35,7 @@ function coverInfo() {
     //平台名称
     var name = "花姬2";
     //平台封面图的url
-    var imageURL = "http://cdn.63a0.com/Uploads/Advertisement/20200717_152741_15949708617555_1660.jpg";
+    var imageURL = "http://xxx.63a0.com/Uploads/cover.jpg";
     //平台房间数
     var online = "100";
     return { "name": name, "logo": imageURL, "source":"JS", "quantity":online };
