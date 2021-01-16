@@ -19,7 +19,7 @@ function coverInfo() {
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "http://s52000.zhesz.com/api/public/?service=Home.getHot";
+    var url = "http://s6000ws.babyea.com/api/public/?service=Home.getHot";
     var method = "POST";
     var param = { "p": pageNum };
     var header = {};
