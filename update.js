@@ -8,8 +8,12 @@ var xiao_da_ji_js = {
     },
     "platforms": [
         {
-            "name": "",
-            "path": ""
+            "name": "七月",
+            "path": "https://raw.githubusercontent.com/reapple/JavaScript/master/七月.js"
+        },
+        {
+            "name": "大香蕉",
+            "path": "https://raw.githubusercontent.com/reapple/JavaScript/master/大香蕉.js"
         }
     ]
 };
