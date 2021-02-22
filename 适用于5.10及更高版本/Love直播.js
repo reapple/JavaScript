@@ -1,5 +1,5 @@
 
-//过滤房间类型：3==>仅显示密码或收费房；0==>显示所有房间
+//过滤房间类型：2==>门票房；3==>计时房；6==>除普通房外的房间；0==>所有房间
 var roomType = "0";
 
 
@@ -30,15 +30,17 @@ function handleData(dic) {
     var formatArr = new Array();
     for (let i = 0; i < dataArr.length; i++) {
         let subDic = dataArr[i];
-        if (subDic["type"] == roomType || roomType == "0") {
-            var formatDic = {
+        var formatDic = {
                 "name": subDic["user_nicename"],
                 "Popularity": subDic["nums"],
                 "video": subDic["pull"],
                 "cover": subDic["avatar"],
                 "id": subDic["uid"]
             };
+        if (subDic["type"] == roomType || roomType == "0") {
             formatArr.push(formatDic);
+        }else if (roomType == "6" && subDic["type"] != "0") {
+            formatArr.push(formatDic);     
         }
 
     }
