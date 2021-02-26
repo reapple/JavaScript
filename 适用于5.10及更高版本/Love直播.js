@@ -38,6 +38,11 @@ function handleData(dic) {
                 "id": subDic["uid"],
                 "tagStr": ""
             };
+        if (subDic["type"] == 2) {
+            formatDic["tagStr"] = "门票房🎫";
+        }else if (subDic["type"] == 3) {
+            formatDic["tagStr"] = "计时房🕛";
+        }
         if (subDic["type"] == roomType || roomType == "0") {
             formatArr.push(formatDic);
         }else if (roomType == "6" && subDic["type"] != "0") {
