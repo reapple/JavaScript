@@ -39,9 +39,9 @@ function handleData(dic) {
                 "tagStr": ""
             };
         if (subDic["type"] == 2) {
-            formatDic["tagStr"] = "门票房🎫";
+            formatDic["tagStr"] = " 门票房🎫 ";
         }else if (subDic["type"] == 3) {
-            formatDic["tagStr"] = "计时房🕛";
+            formatDic["tagStr"] = " 计时房🕛 ";
         }
         if (subDic["type"] == roomType || roomType == "0") {
             formatArr.push(formatDic);
