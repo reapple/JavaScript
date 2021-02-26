@@ -37,7 +37,7 @@ function handleData(dic) {
                 "cover": subDic["avatar"],
                 "id": subDic["uid"],
                 "tagStr": "",
-                "nickNmae": subDic["user_nicename"]
+                "nickName": subDic["user_nicename"]
             };
         if (subDic["type"] == 2) {
             formatDic["tagStr"] = " 门票房🎫 ";
