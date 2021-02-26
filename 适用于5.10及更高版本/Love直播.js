@@ -35,7 +35,8 @@ function handleData(dic) {
                 "Popularity": subDic["nums"],
                 "video": subDic["pull"],
                 "cover": subDic["avatar"],
-                "id": subDic["uid"]
+                "id": subDic["uid"],
+                "tagStr": ""
             };
         if (subDic["type"] == roomType || roomType == "0") {
             formatArr.push(formatDic);
