@@ -1,5 +1,5 @@
 
-
+//过滤房间类型：2==>付费房；6==>除普通房外的房间；0==>所有房间
 var roomType = "0";
 
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
@@ -39,7 +39,7 @@ function handleData(dic) {
                 "roomTitle": subDic["user_nicename"]
             };
         if (subDic["type"] == 2) {
-            formatDic["tagStr"] = " 付费房间💰 ";
+            formatDic["tagStr"] = " 付费房💰 ";
         }else if (subDic["type"] == 3) {
             formatDic["tagStr"] = " 计时房🕛 ";
         }
