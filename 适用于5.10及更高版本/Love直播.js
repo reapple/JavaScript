@@ -17,7 +17,7 @@ function pageInfo() {
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "https://lovezbapi.zjjieneng.cn/api/public/?service=Home.getHot";
+    var url = "https://lovezbapi.jf-mrx.com.cn/api/public/?auth_key=1614421709-6D3D48B8D732410B83D657CBD2918922-0-6bae93c96ef4ec26d3d14d6068cac7a5&service=Home.getHot";
     var method = "POST";
     var param = { "p": "1" };
     var header = {};
