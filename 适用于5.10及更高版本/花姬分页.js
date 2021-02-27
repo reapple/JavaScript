@@ -1,5 +1,5 @@
 
-//过滤房间类型：1：仅显示密码或收费房；0：显示所有房间
+//过滤房间类型：2：收费房；0：显示所有房间
 var roomType = "0";
 
 
@@ -30,15 +30,24 @@ function handleData(dic) {
     var formatArr = new Array();
     for (let i = 0; i < dataArr.length; i++) {
         let subDic = dataArr[i];
-        if (subDic["type"] == roomType || roomType == "0") {
-            var formatDic = {
-                "name": subDic["user_nicename"],
+        var formatDic = {
+                "name": subDic["title"],
                 "Popularity": subDic["nums"],
                 "video": subDic["pull"],
-                "cover": subDic["avatar"],
-                "id": subDic["uid"]
+                "cover": subDic["thumb"],
+                "id": subDic["uid"],
+                "tagStr": "",
+                "roomTitle": subDic["user_nicename"]
             };
+        if (subDic["type"] == 2) {
+            formatDic["tagStr"] = " 付费房💰 ";
+        }else if (subDic["type"] == 3) {
+            formatDic["tagStr"] = " 计时房🕛 ";
+        }
+        if (subDic["type"] == roomType || roomType == "0") {
             formatArr.push(formatDic);
+        }else if (roomType == "6" && subDic["type"] != "0") {
+            formatArr.push(formatDic);     
         }
 
     }
