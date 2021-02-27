@@ -29,15 +29,24 @@ function handleData(dic) {
     var formatArr = new Array();
     for (let i = 0; i < dataArr.length; i++) {
         let subDic = dataArr[i];
-        if (subDic["type"] == roomType || roomType == "0") {
-            var formatDic = {
-                "name": subDic["user_nicename"],
+        var formatDic = {
+                "name": subDic["title"],
                 "Popularity": subDic["nums"],
                 "video": subDic["pull"],
                 "cover": subDic["thumb"],
-                "id": subDic["uid"]
+                "id": subDic["uid"],
+                "tagStr": "",
+                "roomTitle": subDic["user_nicename"]
             };
+        if (subDic["type"] == 2) {
+            formatDic["tagStr"] = " 付费房间💰 ";
+        }else if (subDic["type"] == 3) {
+            formatDic["tagStr"] = " 计时房🕛 ";
+        }
+        if (subDic["type"] == roomType || roomType == "0") {
             formatArr.push(formatDic);
+        }else if (roomType == "6" && subDic["type"] != "0") {
+            formatArr.push(formatDic);     
         }
 
     }
