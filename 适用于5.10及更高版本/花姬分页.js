@@ -40,9 +40,9 @@ function handleData(dic) {
                 "roomTitle": subDic["user_nicename"]
             };
         if (subDic["type"] == 2) {
-            formatDic["tagStr"] = " 付费房💰 ";
+            formatDic["tagStr"] = " 付费房💰"+subDic["type_val"]+"🎫 ";
         }else if (subDic["type"] == 3) {
-            formatDic["tagStr"] = " 计时房🕛 ";
+            formatDic["tagStr"] = " 计时房🕛"+subDic["type_val"]+"/分 ";
         }
         if (subDic["type"] == roomType || roomType == "0") {
             formatArr.push(formatDic);
