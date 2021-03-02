@@ -82,7 +82,9 @@ function handleData(dic) {
                     //在线人数
     //             "Popularity": "666666",
                     //房间id
-    //             "id": "999999"
+    //             "id": "999999",
+                   //房间类型描述
+    //             "tagStr": "房间类型描述"
     //         },
     //         ...
     // }
@@ -96,7 +98,8 @@ function handleData(dic) {
             "Popularity": subDic["watch_number"],
             "video": subDic["address"],
             "cover": subDic["header"],
-            "id": subDic["room_id"]
+            "id": subDic["room_id"],
+            "tagStr": "房间类型描述"
         };
         formatArr.push(formatDic);
     }
