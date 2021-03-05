@@ -10,17 +10,23 @@ function coverInfo() {
 }
 
 function pageInfo() {
-    return { "usePage": "0", "beginPage": "1", "pageKey": "p" }
+    return { "usePage": "1", "beginPage": "1", "pageKey": "page" }
 }
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "https://1008610010.yohui.vip/index.php/Api/LiveApi/getMovielistios";
+    var url = "http://jk.5apk.cn/api/starVideoList";
     var method = "POST";
-    var param = { "id": "8" };
-    var header = {};
+    var param = { "page": 1, "id":0 };
+    var header = {"token": "OTY2NDY3JjE2MTQ5NDU4NDgmMTYxNTAzMjI0OCY5MTM1ZTYwZTA0MDc5M2UyZjBmNTFmMTk4YzMwNGMyZg%3D%3D"};
     return { "url": url, "method": method, "param": param, "header": header };
 }
+
+var url_param = {"method":"POST",
+                 "url":"http://jk.5apk.cn/api/play",
+                 "param":{},
+                 "header":{"token": "OTY2NDY3JjE2MTQ5NDU4NDgmMTYxNTAzMjI0OCY5MTM1ZTYwZTA0MDc5M2UyZjBmNTFmMTk4YzMwNGMyZg%3D%3D"}
+                };
 
 //处理网络数据，统一格式（key、方法名不可更改）
 function handleData(dic) {
@@ -28,17 +34,35 @@ function handleData(dic) {
     var formatArr = new Array();
     for (let i = 0; i < dataArr.length; i++) {
         let subDic = dataArr[i];
-
+        url_param.param = {"uuid": subDic["uuid"], "dl": 1};
+        let title = subDic["video_name"];
+        let start = title.indexOf("《");
+        let end = title.indexOf("》");
+        if(end > 0) {
+            title = title.substring(start+1, end);
+        }
         var formatDic = {
-            "name": subDic["name"],
-            "Popularity": "9",
-            "video": subDic["shiping"],
-            "cover": subDic["img"],
-            "id": "0"
-        };
+                "name": title,
+                "Popularity": subDic["score"],
+                "video": subDic["uuid"],
+                "cover": subDic["video_cover"],
+                "id": subDic["uuid"],
+                "tagStr": "",
+                "needGetURL" : "1",
+                "getUrlParam" : url_param,
+                "playerType": "safari",
+                "roomTitle": subDic["video_time"]
+            };
+        
         formatArr.push(formatDic);
-
+        
     }
 
     return { "data": formatArr };
+}
+
+function getPullURL(dic) {
+    let quality = dic.data.quality;
+    let url = quality[0].url;
+    return {"pull_url": url, "playerType": "safari"};
 }
