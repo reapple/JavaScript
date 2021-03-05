@@ -20,7 +20,7 @@ function videoListInfo() {
     return { "url": url, "method": method, "param": param, "header": header };
 }
 
-var url_param = {"method":"POST", "url":"http://jk.5apk.cn/api/play", "param":{}, "header":{}};
+var url_param = {"method":"POST", "url":"http://jk.5apk.cn/api/play", "param":{}, "header":{"token": "OTY2NDY3JjE2MTQ4NTk3NDImMTYxNDk0NjE0MiZiOTMxYTRjZmNjYTU3ZTdhYmYyNzQxNGVjOGY2YzhiZA%3D%3D"}};
 
 //处理网络数据，统一格式（key、方法名不可更改）
 function handleData(dic) {
@@ -36,9 +36,9 @@ function handleData(dic) {
                 "cover": subDic["video_cover"],
                 "id": subDic["uuid"],
                 "tagStr": "",
-                "needGetUrl" : "1",
+                "needGetURL" : "1",
                 "getUrlParam" : url_param,
-                "palyerType":"safari",
+                "playerType":"safari",
                 "roomTitle": subDic["video_time"]
             };
         
