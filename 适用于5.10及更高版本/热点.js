@@ -30,7 +30,7 @@ var url_param = {"method":"POST",
 
 //处理网络数据，统一格式（key、方法名不可更改）
 function handleData(dic) {
-    var dataArr = dic["data"]["videoList"];
+    var dataArr = dic["data"];
     var formatArr = new Array();
     for (let i = 0; i < dataArr.length; i++) {
         let subDic = dataArr[i];
