@@ -15,7 +15,7 @@ function videoListInfo() {
     var url = "http://jk.5apk.cn/api/starVideoList";
     var method = "POST";
     var param = { "page": 1, "startId":14 };
-    var header = {"token": "token: OTY2NDY3JjE2MTQ5NDU4NDgmMTYxNTAzMjI0OCY5MTM1ZTYwZTA0MDc5M2UyZjBmNTFmMTk4YzMwNGMyZg%3D%3D"};
+    var header = {"token": "OTY2NDY3JjE2MTQ5NDU4NDgmMTYxNTAzMjI0OCY5MTM1ZTYwZTA0MDc5M2UyZjBmNTFmMTk4YzMwNGMyZg%3D%3D"};
     return { "url": url, "method": method, "param": param, "header": header };
 }
 
