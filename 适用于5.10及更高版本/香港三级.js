@@ -48,3 +48,10 @@ function handleData(dic) {
 
     return { "data": formatArr };
 }
+
+function getPullURL(dic) {
+    let quality = dic.data.quality;
+    let url = quality[0].url;
+    return {"pull_url": url};
+}
+
