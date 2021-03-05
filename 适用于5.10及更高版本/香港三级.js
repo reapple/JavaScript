@@ -2,7 +2,7 @@
 //封面信息（key、方法名不可更改， "source":"JS"不可缺少）
 function coverInfo() {
     var name = "香港三级";
-    var imageURL = "https://s3.ax1x.com/2020/12/18/rYJQLF.jpg";
+    var imageURL = "https://s3.ax1x.com/2021/03/05/6mTJ3j.png";
     var online = "50";
     return { "name": name, "logo": imageURL, "source": "JS", "quantity": online };
 }
