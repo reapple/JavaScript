@@ -62,6 +62,6 @@ function handleData(dic) {
 function getPullURL(dic) {
     let quality = dic.data.quality;
     let url = quality[0].url;
-    return {"pull_url": url};
+    return {"pull_url": url, "playerType": "safari"};
 }
 
