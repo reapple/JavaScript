@@ -15,9 +15,9 @@ function pageInfo() {
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "http://jk.5apk.cn/api/starVideoList";
+    var url = "http://jk.5apk.cn/api/topsData";
     var method = "POST";
-    var param = { "page": 1, "id":0 };
+    var param = { "page": 1, "id":2 };
     var header = {"token": "OTY2NDY3JjE2MTQ5NDU4NDgmMTYxNTAzMjI0OCY5MTM1ZTYwZTA0MDc5M2UyZjBmNTFmMTk4YzMwNGMyZg%3D%3D"};
     return { "url": url, "method": method, "param": param, "header": header };
 }
