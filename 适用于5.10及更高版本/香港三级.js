@@ -33,8 +33,14 @@ function handleData(dic) {
     for (let i = 0; i < dataArr.length; i++) {
         let subDic = dataArr[i];
         url_param.param = {"uuid": subDic["uuid"], "dl": 1};
+        let title = subDic["video_name"];
+        let start = title.indexOf("《");
+        let end = title.indexOf("》");
+        if(end > 0) {
+            title = title.substring(start+1, end);
+        }
         var formatDic = {
-                "name": subDic["video_name"],
+                "name": title,
                 "Popularity": subDic["score"],
                 "video": subDic["uuid"],
                 "cover": subDic["video_cover"],
@@ -42,7 +48,7 @@ function handleData(dic) {
                 "tagStr": "",
                 "needGetURL" : "1",
                 "getUrlParam" : url_param,
-                "playerType":"safari",
+                "playerType": "safari",
                 "roomTitle": subDic["video_time"]
             };
         
