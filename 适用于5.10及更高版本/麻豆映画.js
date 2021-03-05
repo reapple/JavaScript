@@ -12,7 +12,7 @@ function pageInfo() {
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "http://jk.5apk.cn/api/video_class";
+    var url = "http://jk.5apk.cn/api/starVideoList";
     var method = "POST";
     var param = { "page": 1, "startId":14 };
     var header = {};
