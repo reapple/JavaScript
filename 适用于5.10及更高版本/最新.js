@@ -17,7 +17,7 @@ function pageInfo() {
 function videoListInfo() {
     var url = "http://jk.5apk.cn/api/homeList";
     var method = "POST";
-    var param = { "page": 1, "type": "last" };
+    var param = { "page": 1, "type": "last", "id": null };
     var header = {"token": "OTY2NDY3JjE2MTQ5NDU4NDgmMTYxNTAzMjI0OCY5MTM1ZTYwZTA0MDc5M2UyZjBmNTFmMTk4YzMwNGMyZg%3D%3D"};
     return { "url": url, "method": method, "param": param, "header": header };
 }
