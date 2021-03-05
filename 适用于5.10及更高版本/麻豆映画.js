@@ -15,14 +15,14 @@ function videoListInfo() {
     var url = "http://jk.5apk.cn/api/starVideoList";
     var method = "POST";
     var param = { "page": 1, "startId":14 };
-    var header = {};
+    var header = {"token": "token: OTY2NDY3JjE2MTQ5NDU4NDgmMTYxNTAzMjI0OCY5MTM1ZTYwZTA0MDc5M2UyZjBmNTFmMTk4YzMwNGMyZg%3D%3D"};
     return { "url": url, "method": method, "param": param, "header": header };
 }
 
 var url_param = {"method":"POST",
                  "url":"http://jk.5apk.cn/api/play",
                  "param":{},
-                 "header":{"token": "OTY2NDY3JjE2MTQ4NTk3NDImMTYxNDk0NjE0MiZiOTMxYTRjZmNjYTU3ZTdhYmYyNzQxNGVjOGY2YzhiZA%3D%3D"}
+                 "header":{"token": "OTY2NDY3JjE2MTQ5NDU4NDgmMTYxNTAzMjI0OCY5MTM1ZTYwZTA0MDc5M2UyZjBmNTFmMTk4YzMwNGMyZg%3D%3D"}
                 };
 
 //处理网络数据，统一格式（key、方法名不可更改）
