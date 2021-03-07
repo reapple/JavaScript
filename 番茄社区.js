@@ -32,7 +32,7 @@ function handleData(dic) {
             "name": subDic["anchor"]["name"],
             "Popularity": subDic["watch_number"],
             "video": subDic["direct_url"],
-            "cover": subDic["img"],
+            "cover": subDic["direct_image"],
             "id": subDic["room_id"]
         };
         formatArr.push(formatDic);
