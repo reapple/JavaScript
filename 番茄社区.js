@@ -30,7 +30,7 @@ function handleData(dic) {
         let subDic = dataArr[i];
         var formatDic = {
             "name": subDic["anchor"]["name"],
-            "Popularity": subDic["watch_number"],
+            "Popularity": subDic["online"],
             "video": subDic["direct_url"],
             "cover": subDic["direct_image"],
             "id": subDic["room_id"]
