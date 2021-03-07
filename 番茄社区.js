@@ -10,9 +10,9 @@ function coverInfo() {
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "https://1008610010.yohui.vip/index.php/Api/LiveApi/getPlatformlist";
+    var url = "http://taohuatannj.com/api/direct/index";
     var method = "POST";
-    var param = { "id": "3" };
+    var param = { "class": 1,  "every": 50, "current": 1 };
     var header = {};
     return { "url": url, "method": method, "param": param, "header": header };
 
@@ -29,9 +29,9 @@ function handleData(dic) {
     for (let i = 0; i < dataArr.length; i++) {
         let subDic = dataArr[i];
         var formatDic = {
-            "name": subDic["title"],
+            "name": subDic["anchor"]["name"],
             "Popularity": subDic["watch_number"],
-            "video": subDic["address"],
+            "video": subDic["direct_url"],
             "cover": subDic["img"],
             "id": subDic["room_id"]
         };
