@@ -33,7 +33,7 @@ function handleData(dic) {
             "Popularity": subDic["online"],
             "video": subDic["direct_url"],
             "cover": subDic["direct_image"],
-            "id": subDic["room_id"]
+            "id": subDic["room_number"]
         };
         formatArr.push(formatDic);
     }
