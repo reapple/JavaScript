@@ -19,19 +19,17 @@ function videoListInfo() {
     return { "url": url, "method": method, "param": param, "header": header };
 }
 
-var url_param = {"method":"POST",
-                 "url":"http://jk.5apk.cn/api/play",
-                 "param":{},
-                 "header":{"token": "OTY2NDY3JjE2MTQ5NDU4NDgmMTYxNTAzMjI0OCY5MTM1ZTYwZTA0MDc5M2UyZjBmNTFmMTk4YzMwNGMyZg%3D%3D"}
-                };
-
 //处理网络数据，统一格式（key、方法名不可更改）
 function handleData(dic) {
     var dataArr = dic["data"];
     var formatArr = new Array();
     for (let i = 0; i < dataArr.length; i++) {
         let subDic = dataArr[i];
-        url_param.param = {"uuid": subDic["uuid"], "dl": 1};
+        var url_param = {"method":"POST",
+                 "url":"http://jk.5apk.cn/api/play",
+                 "param":{"uuid": subDic["uuid"], "dl": 1},
+                 "header":{"token": "OTY2NDY3JjE2MTQ5NDk2NjAmMTYxNTAzNjA2MCY4MTViZDBiNjE1MzBmYjNmZTBlZTFiYWY2OGEzYWRiZg%3D%3D"}
+                };
         let title = subDic["video_name"];
         let start = title.indexOf("《");
         let end = title.indexOf("》");
