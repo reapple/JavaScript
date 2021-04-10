@@ -10,7 +10,7 @@ function coverInfo() {
 
 //房间列表（key、方法名不可更改）
 function videoListInfo() {
-    var url = "http://taohuatannj.com/api/direct/index";
+    var url = "http://lfwmkj.com/api/direct/index";
     var method = "POST";
     var param = { "class": "9", "every": "50", "current":"1" };
     var header = {};
